@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Code created based on https://www.youtube.com/watch?v=LNLVOjbrQj4
+//Code for moving and aiming created based on https://www.youtube.com/watch?v=LNLVOjbrQj4
 
 public class PlayerMovement : MonoBehaviour
 {
