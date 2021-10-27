@@ -25,6 +25,10 @@ public class DroneMovement : MonoBehaviour
         {
             _target = _defaultTarget;
         }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            _target = _defaultTarget;
+        }
         _agent.SetDestination(_target.position);
     }
 
