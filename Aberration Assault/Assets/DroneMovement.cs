@@ -7,19 +7,19 @@ using UnityEngine.AI;
 
 public class DroneMovement : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    NavMeshAgent agent;
+    [SerializeField] Transform _target;
+    NavMeshAgent _agent;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
     }
 
     void Update()
     {
-        agent.SetDestination(target.position);
+        _agent.SetDestination(_target.position);
     }
 
 }
