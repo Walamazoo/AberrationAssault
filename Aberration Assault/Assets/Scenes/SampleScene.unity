@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1019311470}
+  _rb: {fileID: 197325887}
 --- !u!50 &197325887
 Rigidbody2D:
   serializedVersion: 4

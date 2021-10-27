@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class DroneMovement : MonoBehaviour
 {
     [SerializeField] Transform _target;
+    [SerializeField] Rigidbody2D _rb;
     NavMeshAgent _agent;
 
     void Start()
@@ -20,6 +21,17 @@ public class DroneMovement : MonoBehaviour
     void Update()
     {
         _agent.SetDestination(_target.position);
+    }
+
+    void FixedUpdate()
+    {
+        float xPos = _target.transform.position.x;
+        float yPos = _target.transform.position.y;
+        Vector2 pos = new Vector2(xPos, yPos);
+
+        Vector2 lookDirection = pos - _rb.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        _rb.rotation = angle;
     }
 
 }
