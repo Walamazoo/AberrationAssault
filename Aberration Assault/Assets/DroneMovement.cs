@@ -7,7 +7,8 @@ using UnityEngine.AI;
 
 public class DroneMovement : MonoBehaviour
 {
-    [SerializeField] Transform _target;
+    public Transform _target;
+    [SerializeField] Transform _defaultTarget;
     [SerializeField] Rigidbody2D _rb;
     NavMeshAgent _agent;
 
@@ -20,6 +21,10 @@ public class DroneMovement : MonoBehaviour
 
     void Update()
     {
+        if (_target == null)
+        {
+            _target = _defaultTarget;
+        }
         _agent.SetDestination(_target.position);
     }
 
