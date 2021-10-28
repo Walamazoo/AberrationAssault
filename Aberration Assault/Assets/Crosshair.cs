@@ -9,6 +9,6 @@ public class Crosshair : MonoBehaviour
 
     void Update()
     {
-        gameObject.transform.position = _cam.ScreenToWorldPoint(Input.mousePosition);
+        gameObject.transform.position = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 9));
     }
 }
