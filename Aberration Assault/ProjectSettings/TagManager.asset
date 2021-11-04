@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - PatrolPoint
   - Drone
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy Bullet
+  - Enemy
   - 
   - 
   - 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//Code for NavMesh created based on https://www.youtube.com/watch?v=W-NIYi1t16Q and https://github.com/h8man/NavMeshPlus/wiki/HOW-TO
+//Code for NavMesh navigation created based on https://www.youtube.com/watch?v=W-NIYi1t16Q and https://github.com/h8man/NavMeshPlus/wiki/HOW-TO
 
 public class DroneMovement : MonoBehaviour
 {

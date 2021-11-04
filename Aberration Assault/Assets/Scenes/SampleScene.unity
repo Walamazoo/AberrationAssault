@@ -7461,7 +7461,7 @@ GameObject:
   - component: {fileID: 792536509}
   - component: {fileID: 792536506}
   - component: {fileID: 792536507}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -7573,9 +7573,9 @@ MonoBehaviour:
   _target: {fileID: 0}
   _rb: {fileID: 792536509}
   _firePoint: {fileID: 1746761133}
-  _player: {fileID: 1877907385}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
-  _bulletForce: 10
+  _player: {fileID: 1877907381}
+  _fireDistance: 10
 --- !u!50 &792536509
 Rigidbody2D:
   serializedVersion: 4
@@ -7683,7 +7683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051698139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9773,7 +9773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1746761133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ public class HealthController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       if(collision.gameObject.CompareTag("Enemy") == true || collision.gameObject.CompareTag("Bullet") == true)
+       if(collision.gameObject.CompareTag("Enemy") == true || collision.gameObject.CompareTag("Enemy Bullet") == true)
        {
             _hearts[_healthIndex].SetActive(false);
             _healthIndex++;
@@ -21,18 +21,4 @@ public class HealthController : MonoBehaviour
             }
        }
     }
-    /*
-    void OnTriggerEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet") == true)
-        {
-            _hearts[_healthIndex].SetActive(false);
-            _healthIndex++;
-            if (_healthIndex > 2)
-            {
-                SceneManager.LoadScene(0);
-            }
-        }
-    }
-    */
 }

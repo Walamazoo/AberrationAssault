@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Help with patrolling from https://www.youtube.com/watch?v=8eWbSN2T8TE
-
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] DroneMovement _drone;
@@ -19,17 +17,17 @@ public class EnemyController : MonoBehaviour
     private bool _droneAttack = false;
 
     [SerializeField] Transform _firePoint;
-    [SerializeField] Transform _player;
     [SerializeField] GameObject _bulletprefab;
 
-    [SerializeField] float _bulletForce = 10f;
+    [SerializeField] GameObject _player;
+    [SerializeField] float _fireDistance = 10f;
 
     void Start()
     {
         _target = _patrolPoints[0].transform;
 
-        InvokeRepeating("Damage", 0f, 1.0f);
-        //InvokeRepeating("EnemyShoot", 0f, 3f);
+        InvokeRepeating("Damage", 0f, 0.5f);
+        InvokeRepeating("EnemyShoot", 0f, 3f);
 
     }
 
@@ -40,12 +38,13 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //Help with patrolling from https://www.youtube.com/watch?v=8eWbSN2T8TE
+
         transform.position = Vector2.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
     }
 
     void FixedUpdate()
     {
-
         float xPos = _target.transform.position.x;
         float yPos = _target.transform.position.y;
         Vector2 pos = new Vector2(xPos, yPos);
@@ -97,11 +96,13 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    //Help with shooting from https://www.youtube.com/watch?v=_Z1t7MNk0c4&list=PLBIb_auVtBwDgHLhYc-NG633rTbTPim9z&index=2
     void EnemyShoot()
     {
-        GameObject bullet = Instantiate(_bulletprefab, _firePoint.position, _player.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(_player.up * _bulletForce, ForceMode2D.Impulse);
+        if (Vector2.Distance(transform.position, _player.transform.position) < _fireDistance)
+        {
+            GameObject bullet = Instantiate(_bulletprefab, _firePoint.position, Quaternion.identity);
+        }
     }
 
 }

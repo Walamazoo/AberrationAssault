@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1611086881262916494}
   - component: {fileID: 746545562350559236}
   m_Layer: 0
-  m_Name: green poof 1
+  m_Name: Enemy Poof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
