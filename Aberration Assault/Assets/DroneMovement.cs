@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class DroneMovement : MonoBehaviour
 {
-    public Transform _target;
+    public Transform target;
     [SerializeField] Transform _defaultTarget;
     [SerializeField] Rigidbody2D _rb;
     NavMeshAgent _agent;
@@ -21,21 +21,21 @@ public class DroneMovement : MonoBehaviour
 
     void Update()
     {
-        if (_target == null)
+        if (target == null)
         {
-            _target = _defaultTarget;
+            target = _defaultTarget;
         }
         if (Input.GetButtonDown("Fire2"))
         {
-            _target = _defaultTarget;
+            target = _defaultTarget;
         }
-        _agent.SetDestination(_target.position);
+        _agent.SetDestination(target.position);
     }
 
     void FixedUpdate()
     {
-        float xPos = _target.transform.position.x;
-        float yPos = _target.transform.position.y;
+        float xPos = target.transform.position.x;
+        float yPos = target.transform.position.y;
         Vector2 pos = new Vector2(xPos, yPos);
 
         Vector2 lookDirection = pos - _rb.position;

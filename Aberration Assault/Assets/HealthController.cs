@@ -29,7 +29,7 @@ public class HealthController : MonoBehaviour
             StartCoroutine(damageFlash());
             if (_healthIndex > 2)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("GameOver");
             }
        }
     }
