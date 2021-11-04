@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code for sprite color changing on lines 37-38 and 110 from https://stuartspixelgames.com/2019/02/19/how-to-change-sprites-colour-or-transparency-unity-c/
+
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] DroneMovement _drone;
@@ -22,6 +24,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject _player;
     [SerializeField] float _fireDistance = 10f;
 
+    [SerializeField] SpriteRenderer _sprite;
+    private Color _normalColor;
+
     void Start()
     {
         _target = _patrolPoints[0].transform;
@@ -29,6 +34,8 @@ public class EnemyController : MonoBehaviour
         InvokeRepeating("Damage", 0f, 0.5f);
         InvokeRepeating("EnemyShoot", 0f, 3f);
 
+        _sprite = GetComponent<SpriteRenderer>();
+        _normalColor = _sprite.color;
     }
 
     void Update()
@@ -60,6 +67,7 @@ public class EnemyController : MonoBehaviour
         {
             _drone._target = gameObject.transform;
             _health = _health - 2;
+            StartCoroutine(damageFlash());
         }
     }
 
@@ -93,7 +101,15 @@ public class EnemyController : MonoBehaviour
         if (_droneAttack == true)
         {
             _health = _health - 5;
+            StartCoroutine(damageFlash());
         }
+    }
+
+    IEnumerator damageFlash()
+    {
+        _sprite.color = new Color(0, 0, 0, 1);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.color = _normalColor;
     }
 
     //Help with shooting from https://www.youtube.com/watch?v=_Z1t7MNk0c4&list=PLBIb_auVtBwDgHLhYc-NG633rTbTPim9z&index=2
