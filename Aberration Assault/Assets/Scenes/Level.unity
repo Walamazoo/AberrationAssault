@@ -296,7 +296,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1648909731}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &119792192
 CapsuleCollider2D:
@@ -612,7 +612,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1965921190}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &180507322
 CapsuleCollider2D:
@@ -18326,7 +18326,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1418094357}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &493317156
 CapsuleCollider2D:
@@ -18841,7 +18841,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1746761133}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!50 &792536509
 Rigidbody2D:
@@ -18972,7 +18972,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1384023574}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &866376583
 CapsuleCollider2D:
@@ -19215,7 +19215,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1698355135}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &989653670
 CapsuleCollider2D:
@@ -20274,7 +20274,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1651201964}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &1527353661
 CapsuleCollider2D:
@@ -20531,7 +20531,7 @@ MonoBehaviour:
   _firePoint: {fileID: 1455698644}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &1676594877
 CapsuleCollider2D:
@@ -26293,7 +26293,7 @@ MonoBehaviour:
   _firePoint: {fileID: 2127188917}
   _bulletprefab: {fileID: 7354442101523329197, guid: a7a119a0455bb45418427c81253c7214, type: 3}
   _player: {fileID: 1877907381}
-  _fireDistance: 10
+  _fireDistance: 15
   _sprite: {fileID: 0}
 --- !u!70 &1895490299
 CapsuleCollider2D:

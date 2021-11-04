@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject _bulletprefab;
 
     [SerializeField] GameObject _player;
-    [SerializeField] float _fireDistance = 10f;
+    [SerializeField] float _fireDistance = 15f;
 
     [SerializeField] SpriteRenderer _sprite;
     private Color _normalColor;
@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
         _target = _patrolPoints[0].transform;
 
         InvokeRepeating("Damage", 0f, 0.5f);
-        InvokeRepeating("EnemyShoot", 0f, 3f);
+        InvokeRepeating("EnemyShoot", 0f, 2f);
 
         _sprite = GetComponent<SpriteRenderer>();
         _normalColor = _sprite.color;
