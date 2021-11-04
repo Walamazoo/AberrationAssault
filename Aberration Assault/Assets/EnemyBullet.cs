@@ -23,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
-        if (transform.position.x == _target.x && transform.position.y == _target.y)
+        if (transform.position.x * 2 == _target.x * 2 && transform.position.y * 2 == _target.y * 2)
         {
             DestroyProjectile();
         }
