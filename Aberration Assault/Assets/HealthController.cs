@@ -33,6 +33,18 @@ public class HealthController : MonoBehaviour
             }
        }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Health") == true)
+        {
+            if (_healthIndex != 0) 
+            {
+                Destroy(collision.gameObject);
+                _healthIndex--;
+                _hearts[_healthIndex].SetActive(true);
+            }
+        }
+    }
 
     IEnumerator damageFlash()
     {

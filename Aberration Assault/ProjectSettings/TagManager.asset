@@ -9,6 +9,7 @@ TagManager:
   - PatrolPoint
   - Drone
   - Enemy Bullet
+  - Health
   layers:
   - Default
   - TransparentFX
