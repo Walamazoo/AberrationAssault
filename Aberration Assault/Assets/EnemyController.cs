@@ -30,12 +30,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] int _healthDroprate;
     [SerializeField] GameObject _healthDropPrefab;
 
+    [SerializeField] float _firerate;
+
     void Start()
     {
         _target = _patrolPoints[0].transform;
 
         InvokeRepeating("Damage", 0f, 0.5f);
-        InvokeRepeating("EnemyShoot", 0f, 2f);
+        InvokeRepeating("EnemyShoot", 0f, _firerate);
 
         _sprite = GetComponent<SpriteRenderer>();
         _normalColor = _sprite.color;
