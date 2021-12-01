@@ -12,6 +12,7 @@ public class SceneChanger : MonoBehaviour
     public void LoadLevel()
     {
         SceneManager.LoadScene("Level");
+
     }
 
     public void Quit()

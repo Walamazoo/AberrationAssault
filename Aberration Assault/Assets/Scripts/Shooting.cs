@@ -11,13 +11,27 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] float _bulletForce = 20f;
 
+    [SerializeField] bool _paused = false;
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && _paused == false)
         {
             Shoot();
         }
-        
+
+        if (Input.GetKeyUp("escape"))
+        {
+            if (_paused == false)
+            {
+                _paused = true;
+            }
+            else
+            {
+                _paused = false;
+            }
+        }
+
     }
 
     void Shoot()

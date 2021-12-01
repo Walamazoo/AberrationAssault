@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         _pauseMenu.SetActive(false);
+        _isPaused = false;
+        Time.timeScale = 1;
     }
 
     void Update()
