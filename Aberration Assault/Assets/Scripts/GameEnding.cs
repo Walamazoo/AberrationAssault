@@ -19,12 +19,4 @@ public class GameEnding : MonoBehaviour
     {
             SceneManager.LoadScene("Win");
     }
-
-    private void Update()
-    {
-        if (Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
-    }
 }

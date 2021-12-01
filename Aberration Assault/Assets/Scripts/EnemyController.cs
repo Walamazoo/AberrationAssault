@@ -27,8 +27,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] SpriteRenderer _sprite;
     private Color _normalColor;
 
-    [SerializeField] int _healthDroprate;
+    [SerializeField] int _droprate;
     [SerializeField] GameObject _healthDropPrefab;
+    [SerializeField] GameObject _materialDropPrefab;
 
     [SerializeField] float _firerate;
 
@@ -47,9 +48,13 @@ public class EnemyController : MonoBehaviour
     {
         if (_health <= 0)
         {
-            if (Random.Range(1, _healthDroprate) == 1)
+            if (Random.Range(1, _droprate) == 1)
             {
                 GameObject HealthDrop = Instantiate(_healthDropPrefab, gameObject.transform.position, Quaternion.identity);
+            }
+            if (Random.Range(1, _droprate) == 2)
+            {
+                GameObject MaterialDrop = Instantiate(_materialDropPrefab, gameObject.transform.position, Quaternion.identity);
             }
             Destroy(gameObject);
         }
