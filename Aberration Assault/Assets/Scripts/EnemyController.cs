@@ -79,7 +79,9 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet") == true)
         {
-            _drone.target = gameObject.transform;
+            if (_drone.target == null || _drone.target == _drone.defaultTarget) {
+                _drone.target = gameObject.transform;
+            } 
             _health = _health - 2;
             StartCoroutine(damageFlash());
         }
