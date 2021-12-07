@@ -433,7 +433,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &119792192
 CapsuleCollider2D:
@@ -887,7 +887,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &180507322
 CapsuleCollider2D:
@@ -21135,7 +21135,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &493317156
 CapsuleCollider2D:
@@ -22090,7 +22090,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!50 &792536509
 Rigidbody2D:
@@ -22225,7 +22225,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &866376583
 CapsuleCollider2D:
@@ -22576,7 +22576,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &989653670
 CapsuleCollider2D:
@@ -22830,7 +22830,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 3
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 3
 --- !u!70 &1056669524
 CapsuleCollider2D:
@@ -24186,7 +24186,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &1527353661
 CapsuleCollider2D:
@@ -24447,7 +24447,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &1676594877
 CapsuleCollider2D:
@@ -31003,6 +31003,7 @@ MonoBehaviour:
   _firePoint: {fileID: 668415802}
   _bulletprefab: {fileID: 7354442101523329197, guid: df373ec5c3de33b48830b64dc44f3d54, type: 3}
   _bulletForce: 20
+  _paused: 0
 --- !u!70 &1877907387
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -31113,7 +31114,7 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _droprate: 0
   _healthDropPrefab: {fileID: 2391004708693302533, guid: dc7ed4dbed091f44184f56d18a4fc6bc, type: 3}
-  _materialDropPrefab: {fileID: 6540267089617198896, guid: 4b11271e986ae924285f4efacd43a15f, type: 3}
+  _materialDropPrefab: {fileID: 6917882355960647640, guid: 94b7b4755ee5f144db1c9313a851406a, type: 3}
   _firerate: 2
 --- !u!70 &1895490299
 CapsuleCollider2D:
