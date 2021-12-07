@@ -135,4 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _bulletForce: 5
   _splitBulletPrefab: {fileID: 3685107703128951744, guid: 6549bdd1db3ae5644bf5eab0df03592a, type: 3}
