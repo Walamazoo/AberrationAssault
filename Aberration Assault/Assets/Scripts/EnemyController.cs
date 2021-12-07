@@ -48,11 +48,12 @@ public class EnemyController : MonoBehaviour
     {
         if (_health <= 0)
         {
-            if (Random.Range(1, _droprate) == 1)
+            int drop = Random.Range(1, _droprate);
+            if (drop == 1)
             {
                 GameObject HealthDrop = Instantiate(_healthDropPrefab, gameObject.transform.position, Quaternion.identity);
             }
-            if (Random.Range(1, _droprate) == 2)
+            if (drop == 2)
             {
                 GameObject MaterialDrop = Instantiate(_materialDropPrefab, gameObject.transform.position, Quaternion.identity);
             }
