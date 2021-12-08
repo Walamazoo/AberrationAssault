@@ -7,8 +7,10 @@ public class HealthBarActive : MonoBehaviour
 {
     [SerializeField] GameObject _healthBar;
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D collide)
     {
-        _healthBar.SetActive(true);
+        if (collide.CompareTag("Player")){
+            _healthBar.SetActive(true);
+        }
     }
 }
