@@ -40210,6 +40210,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 1259010091}
   _isPaused: 0
+  _materialController: {fileID: 1877907389}
+  _shooting: {fileID: 1877907386}
+  _laserUpgradeCost: 2
+  _laserUpgradeCostDisplay: {fileID: 2010189418}
+  _laserUpgrades:
+  - {fileID: 1435960826}
+  - {fileID: 368996893}
+  - {fileID: 1414849089}
 --- !u!1001 &738397012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56688,7 +56696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _materials: {fileID: 1389187853}
-  _materialAmount: 0
+  _materialAmount: 50
 --- !u!1 &1879413846
 GameObject:
   m_ObjectHideFlags: 0
@@ -57532,7 +57540,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2011914135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 716597801}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: UpgradeLaser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011914135
 MonoBehaviour:
   m_ObjectHideFlags: 0
