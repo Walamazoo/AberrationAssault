@@ -7,6 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject _hitEffect;
+    public int _damage;
 
     void OnCollisionEnter2D(Collision2D collision)
     {

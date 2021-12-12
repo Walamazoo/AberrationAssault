@@ -12,6 +12,8 @@ public class DroneMovement : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     NavMeshAgent _agent;
 
+    public int _droneDamage = 5;
+
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();

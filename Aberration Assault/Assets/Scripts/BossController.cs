@@ -91,7 +91,7 @@ public class BossController : MonoBehaviour
             {
                 _drone.target = gameObject.transform;
             }
-            _health = _health - 2;
+            _health = _health - collision.gameObject.GetComponent<Bullet>()._damage;
             StartCoroutine(damageFlash());
         }
     }
@@ -125,7 +125,7 @@ public class BossController : MonoBehaviour
     {
         if (_droneAttack == true)
         {
-            _health = _health - 5;
+            _health = _health - _drone._droneDamage;
             StartCoroutine(damageFlash());
         }
     }

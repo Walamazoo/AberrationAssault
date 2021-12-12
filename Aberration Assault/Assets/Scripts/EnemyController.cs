@@ -82,8 +82,8 @@ public class EnemyController : MonoBehaviour
         {
             if (_drone.target == null || _drone.target == _drone.defaultTarget) {
                 _drone.target = gameObject.transform;
-            } 
-            _health = _health - 2;
+            }
+            _health = _health - collision.gameObject.GetComponent<Bullet>()._damage;
             StartCoroutine(damageFlash());
         }
     }
@@ -117,7 +117,7 @@ public class EnemyController : MonoBehaviour
     {
         if (_droneAttack == true)
         {
-            _health = _health - 5;
+            _health = _health - _drone._droneDamage;
             StartCoroutine(damageFlash());
         }
     }
