@@ -13,11 +13,16 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] MaterialController _materialController;
 
     [SerializeField] Shooting _shooting;
-
     [SerializeField] int _laserUpgradeCost;
     [SerializeField] TextMeshProUGUI _laserUpgradeCostDisplay;
     [SerializeField] GameObject[] _laserUpgrades;
     int _laserUpgradeIndex = 0;
+
+    [SerializeField] DroneMovement _drone;
+    [SerializeField] int _droneUpgradeCost;
+    [SerializeField] TextMeshProUGUI _droneUpgradeCostDisplay;
+    [SerializeField] GameObject[] _droneUpgrades;
+    int _droneUpgradeIndex = 0;
 
     void Start()
     {
@@ -57,13 +62,33 @@ public class PauseMenu : MonoBehaviour
                 _materialController.UpdateMaterialAmount(-_laserUpgradeCost);
                 _laserUpgradeCost += 2;
                 _laserUpgradeCostDisplay.text = (_laserUpgradeCost).ToString();
-                _laserUpgrades[_laserUpgradeIndex].GetComponent<Image>().color = new Color(12, 156, 229, 255);
-                _laserUpgradeIndex += 2;
+                _laserUpgrades[_laserUpgradeIndex].GetComponent<Image>().color = new Color(12, 156, 229, 1);
+                _laserUpgradeIndex += 1;
                 if (_laserUpgradeIndex > 2)
                 {
                     _laserUpgradeCostDisplay.text = "";
                 }
-                _shooting._bulletDamage += 1;
+                _shooting._bulletDamage += 2;
+            }
+        }
+    }
+
+    public void UpgradeDrone()
+    {
+        if (_droneUpgradeIndex <= 2)
+        {
+            if (_materialController._materialAmount >= _droneUpgradeCost)
+            {
+                _materialController.UpdateMaterialAmount(-_droneUpgradeCost);
+                _droneUpgradeCost += 3;
+                _droneUpgradeCostDisplay.text = (_droneUpgradeCost).ToString();
+                _droneUpgrades[_droneUpgradeIndex].GetComponent<Image>().color = new Color(12, 156, 229, 1);
+                _droneUpgradeIndex += 1;
+                if (_droneUpgradeIndex > 2)
+                {
+                    _droneUpgradeCostDisplay.text = "";
+                }
+                _drone._droneDamage += 4;
             }
         }
     }
