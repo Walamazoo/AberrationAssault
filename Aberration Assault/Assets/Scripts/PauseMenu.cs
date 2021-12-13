@@ -37,6 +37,20 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject _shieldAquired;
     bool _gotShield = false;
 
+    [SerializeField] int _sentryCost;
+    [SerializeField] TextMeshProUGUI _getSentryUpgradeCostDisplay;
+    [SerializeField] GameObject _sentryAquired;
+    bool _gotSentry = false;
+
+    [SerializeField] GameObject _sentryReady;
+    [SerializeField] GameObject _sentryUpgradeMenu;
+
+    [SerializeField] SentrySpawn _sentry;
+    [SerializeField] int _sentryUpgradeCost;
+    [SerializeField] TextMeshProUGUI _sentryUpgradeCostDisplay;
+    [SerializeField] GameObject[] _sentryUpgrades;
+    int _sentryUpgradeIndex = 0;
+
     void Start()
     {
         _laserUpgradeCostDisplay.text = _laserUpgradeCost.ToString();
@@ -128,6 +142,40 @@ public class PauseMenu : MonoBehaviour
             _gotShield = true;
             _shieldControl._shieldBought = true;
             _shieldControl.RechargeShield();
+        }
+    }
+
+    public void GetSentry()
+    {
+        if (_gotSentry == false && _materialController._materialAmount >= _sentryCost)
+        {
+            _materialController.UpdateMaterialAmount(-_sentryCost);
+            _getSentryUpgradeCostDisplay.text = "";
+            _sentryAquired.GetComponent<Image>().color = new Color(12, 156, 229, 1);
+            _gotSentry = true;
+            _sentryUpgradeMenu.SetActive(true);
+            _sentryReady.SetActive(true);
+            _sentry._sentryAvailable = true;
+        }
+    }
+
+    public void UpgradeSentry()
+    {
+        if (_sentryUpgradeIndex <= 2)
+        {
+            if (_materialController._materialAmount >= _sentryUpgradeCost)
+            {
+                _materialController.UpdateMaterialAmount(-_sentryUpgradeCost);
+                _sentryUpgradeCost += 2;
+                _sentryUpgradeCostDisplay.text = (_sentryUpgradeCost).ToString();
+                _sentryUpgrades[_sentryUpgradeIndex].GetComponent<Image>().color = new Color(12, 156, 229, 1);
+                _sentryUpgradeIndex += 1;
+                if (_sentryUpgradeIndex > 2)
+                {
+                    _sentryUpgradeCostDisplay.text = "";
+                }
+                _sentry._sentryBulletDamage += 3;
+            }
         }
     }
 }
