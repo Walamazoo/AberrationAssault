@@ -18,6 +18,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject[] _laserUpgrades;
     int _laserUpgradeIndex = 0;
 
+    [SerializeField] int _spreadCost;
+    [SerializeField] TextMeshProUGUI _spreadUpgradeCostDisplay;
+    [SerializeField] GameObject _spreadAquired;
+    bool _gotSpread = false;
+
     [SerializeField] DroneMovement _drone;
     [SerializeField] int _droneUpgradeCost;
     [SerializeField] TextMeshProUGUI _droneUpgradeCostDisplay;
@@ -26,8 +31,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        _laserUpgradeCost = 2;
         _laserUpgradeCostDisplay.text = _laserUpgradeCost.ToString();
+        _droneUpgradeCostDisplay.text = _droneUpgradeCost.ToString();
 
         _pauseMenu.SetActive(false);
         _isPaused = false;
@@ -90,6 +95,18 @@ public class PauseMenu : MonoBehaviour
                 }
                 _drone._droneDamage += 4;
             }
+        }
+    }
+
+    public void GetSpread()
+    {
+        if (_gotSpread == false && _materialController._materialAmount >= _spreadCost)
+        {
+            _materialController.UpdateMaterialAmount(-_spreadCost);
+            _spreadUpgradeCostDisplay.text = "";
+            _spreadAquired.GetComponent<Image>().color = new Color(12, 156, 229, 1);
+            _gotSpread = true;
+            _shooting._spread = true;
         }
     }
 }

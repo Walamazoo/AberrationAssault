@@ -599,6 +599,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60697547}
   m_CullTransparentMesh: 1
+--- !u!1 &95988047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95988048}
+  m_Layer: 0
+  m_Name: FirePoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &95988048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95988047}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6427876, w: 0.7660445}
+  m_LocalPosition: {x: 0.25099945, y: -0.096999966, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1877907385}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -80}
 --- !u!1001 &98044695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,7 +1885,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 216437290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 716597801}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: GetSpread
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &216437290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,7 +2435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -40295,6 +40337,9 @@ MonoBehaviour:
   - {fileID: 1435960826}
   - {fileID: 368996893}
   - {fileID: 1414849089}
+  _spreadCost: 12
+  _spreadUpgradeCostDisplay: {fileID: 276017098}
+  _spreadAquired: {fileID: 2136141683}
   _drone: {fileID: 197325886}
   _droneUpgradeCost: 3
   _droneUpgradeCostDisplay: {fileID: 1543275928}
@@ -41826,11 +41871,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019311469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.508, y: 0.46, z: 0}
-  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_LocalPosition: {x: -0.50800073, y: 0.46000016, z: 0}
+  m_LocalScale: {x: 0.3333333, y: 0.3333333, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 1877907385}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041766311
 GameObject:
@@ -43503,6 +43548,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!1 &1376289897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376289898}
+  m_Layer: 0
+  m_Name: FirePoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1376289898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376289897}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7660445, w: 0.64278764}
+  m_LocalPosition: {x: 0.251, y: -0.097, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1877907385}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -100}
 --- !u!1 &1384023573
 GameObject:
   m_ObjectHideFlags: 0
@@ -56726,6 +56801,8 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 668415802}
+  - {fileID: 95988048}
+  - {fileID: 1376289898}
   - {fileID: 1019311470}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -56743,10 +56820,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 668415802}
+  _firePoint2: {fileID: 95988048}
+  _firePoint3: {fileID: 1376289898}
   _bulletprefab: {fileID: 7354442101523329197, guid: df373ec5c3de33b48830b64dc44f3d54, type: 3}
   _bulletForce: 20
   _paused: 0
   _bulletDamage: 2
+  _spread: 0
 --- !u!70 &1877907387
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
