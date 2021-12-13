@@ -14,6 +14,10 @@ public class HealthController : MonoBehaviour
     [SerializeField] SpriteRenderer _sprite;
     private Color _normalColor;
 
+    [SerializeField] GameObject _shield;
+    public bool _shieldBought = false;
+    bool _shieldActive = false;
+
     void Start()
     {
         _sprite = GetComponent<SpriteRenderer>();
@@ -24,12 +28,21 @@ public class HealthController : MonoBehaviour
     {
        if(collision.gameObject.CompareTag("Enemy") == true || collision.gameObject.CompareTag("Enemy Bullet") == true)
        {
-            _hearts[_healthIndex].SetActive(false);
-            _healthIndex++;
-            StartCoroutine(damageFlash());
-            if (_healthIndex > 2)
+            if (_shieldActive == false)
             {
-                SceneManager.LoadScene("GameOver");
+                _hearts[_healthIndex].SetActive(false);
+                _healthIndex++;
+                StartCoroutine(damageFlash());
+                if (_healthIndex > 2)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
+            }
+            else
+            {
+                _shield.SetActive(false);
+                _shieldActive = false;
+                Invoke("RechargeShield", 5f);
             }
        }
     }
@@ -51,5 +64,15 @@ public class HealthController : MonoBehaviour
         _sprite.color = new Color(0, 0, 0, 1);
         yield return new WaitForSeconds(0.1f);
         _sprite.color = _normalColor;
+    }
+
+    public void RechargeShield()
+    {
+        if (_shieldBought == true)
+        {
+            _shield.SetActive(true);
+            _shieldActive = true;
+        }
+
     }
 }

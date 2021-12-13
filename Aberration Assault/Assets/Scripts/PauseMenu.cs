@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] MaterialController _materialController;
 
     [SerializeField] Shooting _shooting;
+
     [SerializeField] int _laserUpgradeCost;
     [SerializeField] TextMeshProUGUI _laserUpgradeCostDisplay;
     [SerializeField] GameObject[] _laserUpgrades;
@@ -28,6 +29,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI _droneUpgradeCostDisplay;
     [SerializeField] GameObject[] _droneUpgrades;
     int _droneUpgradeIndex = 0;
+
+    [SerializeField] HealthController _shieldControl;
+
+    [SerializeField] int _shieldCost;
+    [SerializeField] TextMeshProUGUI _shieldUpgradeCostDisplay;
+    [SerializeField] GameObject _shieldAquired;
+    bool _gotShield = false;
 
     void Start()
     {
@@ -107,6 +115,19 @@ public class PauseMenu : MonoBehaviour
             _spreadAquired.GetComponent<Image>().color = new Color(12, 156, 229, 1);
             _gotSpread = true;
             _shooting._spread = true;
+        }
+    }
+
+    public void GetShield()
+    {
+        if (_gotShield == false && _materialController._materialAmount >= _shieldCost)
+        {
+            _materialController.UpdateMaterialAmount(-_shieldCost);
+            _shieldUpgradeCostDisplay.text = "";
+            _shieldAquired.GetComponent<Image>().color = new Color(12, 156, 229, 1);
+            _gotShield = true;
+            _shieldControl._shieldBought = true;
+            _shieldControl.RechargeShield();
         }
     }
 }
