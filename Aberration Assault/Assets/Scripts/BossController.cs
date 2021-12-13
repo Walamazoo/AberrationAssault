@@ -57,13 +57,13 @@ public class BossController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (_health <= _health/2 && _phase1 == false)
+        if (_health <= 700 && _phase1 == false)
         {
             InvokeRepeating("EnemyShoot", 0.5f, _firerate);
             _phase1 = true;
         }
 
-        if (_health <= _health/3 && _phase2 == false)
+        if (_health <= 400 && _phase2 == false)
         {
             InvokeRepeating("EnemyBigShoot", 0f, _bigFirerate);
             _phase2 = true;
@@ -85,14 +85,18 @@ public class BossController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet") == true || collision.gameObject.CompareTag("Sentry Bullet") == true)
+        if (collision.gameObject.CompareTag("Bullet") == true)
         {
             if (collision.gameObject.CompareTag("Bullet") == true && (_drone.target == null || _drone.target == _drone.defaultTarget))
             {
                 _drone.target = gameObject.transform;
             }
-            _health = _health - collision.gameObject.GetComponent<SentryBullet>()._damage;
             _health = _health - collision.gameObject.GetComponent<Bullet>()._damage;
+            StartCoroutine(damageFlash());
+        }
+        if (collision.gameObject.CompareTag("Sentry Bullet") == true)
+        {
+            _health = _health - collision.gameObject.GetComponent<SentryBullet>()._damage;
             StartCoroutine(damageFlash());
         }
     }

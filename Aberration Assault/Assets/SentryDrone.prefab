@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firerate: 2
-  _fireDistance: 10
+  _fireDistance: 15
   _firePoint: {fileID: 6834285110165441116}
   _bulletprefab: {fileID: 7224265981092319390, guid: fbe84c6df5b1b0a48af438b2fd6ea966, type: 3}
   _bulletDamage: 2

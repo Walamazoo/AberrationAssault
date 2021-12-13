@@ -19,10 +19,12 @@ public class SentryDrone : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log("Shoot");
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length > 0)
         {
-            var closestEnemy = enemies[0];
+            Debug.Log("There be enemies");
+            GameObject closestEnemy = enemies[0];
             var distance = Vector2.Distance(transform.position, enemies[0].transform.position);
             for (int i=0;i<enemies.Length;i++)
             {
@@ -31,8 +33,9 @@ public class SentryDrone : MonoBehaviour
                     closestEnemy = enemies[i];
                 }
             }
-            if (Vector2.Distance(transform.position, closestEnemy.transform.position) < _fireDistance)
+            if (Vector2.Distance(transform.position, closestEnemy.transform.position) <= _fireDistance)
             {
+                Debug.Log("Enemy in range");
                 GameObject bullet = Instantiate(_bulletprefab, _firePoint.position, Quaternion.identity);
                 bullet.GetComponent<SentryBullet>()._damage = _bulletDamage;
                 bullet.GetComponent<SentryBullet>()._enemy = closestEnemy.transform;

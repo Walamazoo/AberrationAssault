@@ -78,14 +78,18 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet") == true || collision.gameObject.CompareTag("Sentry Bullet") == true)
+        if (collision.gameObject.CompareTag("Bullet") == true)
         {
-            if (collision.gameObject.CompareTag("Bullet") == true && (_drone.target == null || _drone.target == _drone.defaultTarget)) {
+            if (collision.gameObject.CompareTag("Bullet") == true && (_drone.target == null || _drone.target == _drone.defaultTarget))
+            {
                 _drone.target = gameObject.transform;
             }
-            Debug.Log("hit");
+            _health = _health - collision.gameObject.GetComponent<Bullet>()._damage;
+            StartCoroutine(damageFlash());
+        }
+        if (collision.gameObject.CompareTag("Sentry Bullet") == true)
+        {
             _health = _health - collision.gameObject.GetComponent<SentryBullet>()._damage;
-            _health = _health - collision.gameObject.GetComponent<Bullet>()._damage;    
             StartCoroutine(damageFlash());
         }
     }
